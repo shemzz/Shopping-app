@@ -9,7 +9,7 @@ recipeSelected = new EventEmitter<Recipe>();
  private recipes: Recipe[] = [
     new Recipe ('Boli',
                 'Most Sumptious Preparation of Plantain. Nothing beats this',
-                './../../../assets/images/person.png',
+                './../../../assets/images/boli.jpg',
                 [
                   new Ingredient('Fish', 1),
                   new Ingredient('Plantain', 5),
@@ -30,6 +30,11 @@ constructor (private slService: ShoppingListService) {}
 getRecipes() {
   return this.recipes.slice();
 }
+
+getRecipe(index: number) {
+  return this.recipes[index];
+}
+
 addIngredientsToShoppingList(ingredients: Ingredient[]) {
   this.slService.addIngredients(ingredients);
 }
